@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: Url
+  title: Title
+  description: Description
+  image: Image
+  views_count: 1
+
+two:
+  url: Url's
+  title: Titles
+  description: Descriptions
+  image: Images
+  views_count: 1
