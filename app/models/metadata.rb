@@ -30,10 +30,10 @@ class Metadata
   end
 
   def image
-    meta_tag_content "og:image"
+    meta_tag_content "og:image", name_attribute: :property
   end
 
-  def meta_tag_content(name)
-    doc.at_css("meta[name='#{name}']")&.attributes&.fetch("content", nil)&.text
+  def meta_tag_content(name, name_attribute: :name)
+    doc.at_css("meta[#{name_attribute}='#{name}']")&.attributes&.fetch("content", nil)&.text
   end
 end
