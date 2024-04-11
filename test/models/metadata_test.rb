@@ -8,4 +8,12 @@ class MetadataTest < ActiveSupport::TestCase
   test "missing title attribute" do
     assert_nil Metadata.new.title
   end
+  
+  test "meta description" do
+    assert_equal "Hi! im a description", Metadata.new("<meta name='description' content='Hi! im a description'>").description
+  end
+ 
+  test "missing meta description" do
+    assert_nil Metadata.new.description
+  end
 end
