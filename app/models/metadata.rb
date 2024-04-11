@@ -22,7 +22,7 @@ class Metadata
   end
 
   def title
-    
+    doc.at_css("title")&.text
   end
 
   def description
