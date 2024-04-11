@@ -1,0 +1,2 @@
+class MetadataJob < ApplicationJob
+end
