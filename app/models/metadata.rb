@@ -3,7 +3,7 @@ require "open-uri"
 class Metadata
   attr_reader :doc
 
-  def self.retrive_from(url)
+  def self.retrieve_from(url)
     new(URI.open(url))
   rescue
     new
