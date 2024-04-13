@@ -6,8 +6,8 @@
     </div>
 </div>
 
-<h1 class="mt-4"><%= @link.url %></h1>
-<%= @link.description %>
+<h1 class="mt-4"><%= @link.title || @link.url %></h1>
+<p><%= @link.description %></p>
 
 <%= link_to view_path(@link), target: :_blank, data: { turbo: false }, class: "px-3 py-2 text-xs rounded bg-gray-100 no-underline" do %>
   <%= favicon_image_tag @link.domain, class: "inline-block" %>
