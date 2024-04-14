@@ -90,4 +90,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Sucker Punch
+  config.active_job.queue_adapter = :sucker_punch
 end
