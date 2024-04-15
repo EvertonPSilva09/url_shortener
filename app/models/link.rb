@@ -34,8 +34,6 @@ class Link < ApplicationRecord
   end
 
   def editable_by?(user)
-    return false unless user_id?
-
-    user_id == user&.id
+    user_id? && (user_id == user&.id)
   end
 end
