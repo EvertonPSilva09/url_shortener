@@ -15,8 +15,21 @@
 
   <body>
     <main class="prose mx-auto mt-28 px-5">
-      <%= tag.p notice, class: "bg-red-100 text-red-800 p-2 rounded" if notice %>
+      <%= tag.p notice, class: "bg-green-100 text-green-800 p-2 rounded" if notice %>
       <%= tag.p alert, class: "bg-yellow-100 text-yellow-800 p-2 rounded" if alert %>
+      <nav class="mb-8 flex items-center justify-between">
+        <h1 class="m-0">URL Shortener</h1>
+
+        <div>
+          <% if user_signed_in? %>
+            <%= link_to "Profile", edit_user_registration_path, class: "px-3 py-2 rounded bg-gray-100 no-underline hover:bg-green-200" %>
+            <%= link_to "Logout", destroy_user_session_path, class: "px-3 py-2 rounded bg-gray-100 no-underline hover:bg-red-200", method: :delete %>
+          <% else %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "px-3 py-2 rounded bg-gray-100 no-underline hover:bg-gray-200" %> |
+            <%= link_to "Login", new_user_session_path, class: "px-3 py-2 rounded bg-gray-100 no-underline hover:bg-gray-200" %>
+          <% end %>
+        </div>
+      </nav>
       <%= yield %>
     </main>
   </body>
