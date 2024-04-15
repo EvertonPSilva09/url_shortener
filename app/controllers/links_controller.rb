@@ -51,7 +51,7 @@ class LinksController < ApplicationController
 
   def check_if_editable
     unless @link.editable_by?(current_user)
-      redirect_to root_path, alert: "You aren't allowed to edit this link."
+      redirect_to @link, alert: "You aren't allowed to edit this link."
     end
   end
 end
