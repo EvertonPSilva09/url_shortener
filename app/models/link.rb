@@ -32,4 +32,10 @@ class Link < ApplicationRecord
   def domain
     URI.parse(url).host rescue URI::InvalidURIError
   end
+
+  def editable_by?(user)
+    return false unless user_id?
+
+    user_id == user&.id
+  end
 end
